@@ -1,0 +1,109 @@
+.list_container{
+
+    
+
+
+}
+.list_warper{
+
+    overflow: hidden;
+    padding: 0 7px;
+
+    ul{
+        list-style: none;
+        padding-left: 0px;
+        margin-top: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        li{
+            width: 50%;
+            a{
+                position: relative;
+                display: block;
+                margin: 5px 3px;
+                background-color: #fff;
+                color: #333;
+                box-sizing: border-box;
+
+                .price_warper{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding-bottom: 10px;
+                    p{
+                        flex: 1;
+                        margin: 0px;
+                        font-size: 16px;
+                        color: #f44;
+                        font-weight: 400;
+                        font-stretch: 100%;
+                        padding-left: 10px;
+                    }
+
+                    .shop_cart{
+                    
+                        flex: 1;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        padding-right: 10px;
+                        .cap_goods_list__buy_btn{
+
+                            width: 24px;
+                            height: 24px;
+                            color: #f44;
+                            background-color: #fff;
+                            -webkit-box-sizing: border-box;
+                            -moz-box-sizing: border-box;
+                            box-sizing: border-box;
+                            text-align: center;
+                            font-size: 12px;
+                            cursor: pointer;
+                            border: 1px solid #f44;
+                            border-radius: 50%;
+                        }
+
+                    }
+
+                }
+                .title_warper{
+                    
+                    position: relative;
+                    overflow: hidden;
+                    padding: 10px;
+                    cursor: pointer;
+                    width: inherit;
+                    p{
+                        height: 36px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        font-size: 14px;
+                        line-height: 18px;
+                        text-align: left;
+                        font-weight:none;
+                        margin: 0px;
+                        -webkit-line-clamp: 2;
+                        /* autoprefixer: off*/
+                        -webkit-box-orient: vertical;
+                        /* autoprefixer: on*/
+                    }
+
+                }
+            }
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+
+        }
+       
+    }
+
+    
+
+}

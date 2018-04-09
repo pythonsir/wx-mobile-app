@@ -1,6 +1,6 @@
 
 import axios from 'axios'
-import {banner} from '../mock/data'
+require('../mock/data') 
 
 
 export async function getBanners(){
@@ -9,6 +9,21 @@ export async function getBanners(){
    return axios.get('/api/banner');
 
 }
+
+export async function getShortcutList(){
+
+
+    return axios.get('/api/shortcut')
+
+}   
+
+export async function getproduct_1(){
+
+    return axios.get('/api/products_1')
+
+
+}
+
 
 export async function login(param) {
 
