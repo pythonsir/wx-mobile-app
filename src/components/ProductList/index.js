@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 
 import Styles from './index.less'
 
+import scar from '../../assets/scar.svg'
+
 class ProductList extends PureComponent{
 
 
@@ -36,7 +38,7 @@ class ProductList extends PureComponent{
                                                         <p><em>¥ {item.price}</em></p>
                                                         <div className={Styles.shop_cart}>
                                                             <div className={Styles.cap_goods_list__buy_btn}>
-                                                                <i></i>
+                                                                <img className={Styles.scimg} src={scar} />
                                                             </div>
                                                         </div>
                                                     </div>
