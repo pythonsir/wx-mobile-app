@@ -1,145 +1,106 @@
-import React ,{PureComponent} from 'react'
-import classNames from 'classnames'
-import ReactDOM from 'react-dom'
+import React , { PureComponent } from 'react'
 
-import {TabBar,Popover,Icon} from 'antd-mobile'
+import classNames from 'classnames'
+
 import {Link} from 'react-router-dom'
 
-import WxPopover from './Popover'
+import {menuData} from '../../common/menu'
 
-import home from '../../assets/home.svg'
-
-import list from '../../assets/list.svg'
-
+import 'antd-mobile/lib/tab-bar/style/index.css';
+import 'antd-mobile/lib/badge/style/index.css'
 
 import Styles from './index.less'
 
-
-class WxTabBar extends TabBar{
-
-
-    constructor(props){
-
-        super(props);
-
-        this.menuData = props.menus
-
-        this.state = {
-            visibel :''
-        }
+import home1 from '../../assets/home1.png'
 
 
+
+class WxTabBar extends PureComponent{
+
+
+    state={
+
+        selectedTab:'home'
 
     }
 
-
-    componentDidMount() {
-        
-        const object = this.refs;
-
-      for (const key in object) {
-          if (object.hasOwnProperty(key)) {
-              const element = object[key];
-              
-          }
-      }
-
-        
-
-        // console.log(a.offsetLeft+' '+a.offsetTop)
-        
-        // console.log(window.getCoimputedStyle(this.first).width)
-    
-    }
-
-
-
-
-    getTabMenu = (menuData)=>{
-
-        if(!menuData){
-            return [];
-        }
-        return menuData.map((item,index) => {
-            
-            if(!item.children){
-
-                return <div ref={"tab_"+index}  key={index} className={classNames(Styles.wx_am_tab_bar_tab)}>
-                <Link to={item.path}>{item.name}</Link></div>
-
-            }else{
-
-                return (
-
-                    <div ref={"tab_"+index}  key={index} className={classNames(Styles.wx_am_tab_bar_tab)}>
-                    <img src={list} width="10" height="10" /><a href="#" onClick={this.getSubMenu.bind(this,index)}>{item.name}</a> 
-
-
-                    {
-                        this.state.visibel == index ?
-                        <WxPopover tabindex={index}   ref={"tab_child"+index} submenus={item.children}   />
-                        :""
-
-                    } 
-                      
-                       </div>
-                    
-                    
-                )  
-             }
-
-          })
-
-    }
-
-   
-
-    getSubMenu =(index)=>{
-
-    
+    changeTab =(tab)=>{
 
         this.setState({
-            visibel:index
+            selectedTab:tab,
         })
 
+
     }
+
 
     render(){
 
-      const {menu} = this.props;
-
-
-        const container = classNames({
-
-            "am-tabs-tab-bar-wrap" : true,
-            },
-            Styles.container,
-        )
-
-
-       
 
         return (
-            <div className={container}>
 
-                <div className={classNames("am-tab-bar-bar",Styles.wx_tab_right_border)} style={{background_color:'white'}}>
+           
+            <div className={classNames({
+                'am-tabs-tab-bar-wrap':true,
+            },Styles.container)}  >
 
-                        <div className={classNames(Styles.img_home)}><img src={home} width="22" /></div>
-                       { this.getTabMenu(this.menuData) }
+                <div className="am-tab-bar-bar" style={{backgroundColor: "white"}}>
+
+
+{
+
+    menuData.map(item =>(
+
+
+        <div key={item.key} className="am-tab-bar-tab" >
+
+        <Link to={item.path} onClick={this.changeTab.bind(this,item.key)}>
+
+            <div className="am-tab-bar-tab-icon" >
+
+                <span className="am-badge am-tab-bar-tab-badge tab-badge">
+
+
+{
+
+    this.state.selectedTab == item.key?
+
+      <div style={{width: "22px", height: "22px", background: `url(${item.selectedIcon}) center center / 21px 21px no-repeat`}}> </div>
+      :
+     <div style={{width: "22px", height: "22px", background: `url(${item.icon}) center center / 21px 21px no-repeat`}}></div>
+
+}
+              
+                
                         
+                        {/* <sup className="am-badge-text">1</sup> */}
+                
+                </span>
+
+
+            </div>
+
+            <p className="am-tab-bar-tab-title" style={{color: this.state.selectedTab == item.key?item.tintColor:item.unselectedTintColor  }}>{item.name}</p>
+
+        </Link>
+
+        </div>
+
+
+
+    ))
+
+}
+
                 </div>
 
-                
-
-                
-                
             </div>
         )
 
-
     }
+
 
 
 }
 
-export default WxTabBar;
+export  default  WxTabBar;

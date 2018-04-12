@@ -15,19 +15,22 @@ import {menuData} from '../common/menu'
 
 import ProductList from '../routes/productList'
 import { width } from 'window-size';
+import { inherits } from 'util';
 
 export default class Home extends PureComponent{
 
-
-
     render(){
+
         return (
 
-            <div style={{width:"100%"}}>
+            <div style={{ "height": "100%","overflow": "scroll"}}>
                 <Banner />
                 <ShortCut />
                 <SearchProduct text={"搜索商品"} />
                 <ImageAd imgurl="" imgsrc={ad1} /> 
+                <ProductList />
+                <ProductList />
+                <ProductList />
                 <ProductList />
             </div>        
             

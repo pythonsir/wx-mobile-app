@@ -12,14 +12,11 @@ import BaseLayout from './layouts/BaseLayout'
 import './index.css'; 
 
 
-
-
-
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
-       <Route path="/"  component={BaseLayout} />
+       <Route path="/"  component={BaseLayout } />
       </Switch>
     </ConnectedRouter>
   </Provider>,
