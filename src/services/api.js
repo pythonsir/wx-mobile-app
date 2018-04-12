@@ -24,6 +24,10 @@ export async function getproduct_1(){
 
 }
 
+export async function getHShopCar(){
+    return axios.get('/api/getshopcar')
+}
+
 
 export async function login(param) {
 

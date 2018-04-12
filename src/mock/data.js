@@ -85,8 +85,31 @@ const products_1 = Mock.mock('/api/products_1',[
 ])
 
 
+const addShopcar = Mock.mock('/api/getshopcar',{
+
+    "id|1000-2000":1,
+    "title":'熊猫有礼  健康无添加  小孩可以放心吃的猪肉丝  香酥猪肉松&黄金猪肉丝',
+    "imgsrc":p1,
+    "data|4":[
+            {
+                "sepc|1":[
+                        "黄金猪肉丝98g+香酥猪肉松108g",
+                        "黄金猪肉丝98g",
+                        "香酥猪肉松108g"
+                ],
+                "price|20-30.2":1,
+            }
+        
+    ],
+
+
+
+
+})
+
 export {
     banner,
     shortcut,
     products_1,
+    addShopcar,
 }

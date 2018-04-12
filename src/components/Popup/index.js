@@ -1,6 +1,8 @@
 import React, {PureComponent} from 'react'
 import classNames from 'classnames'
 import Styles from './index.less'
+import HomeShopcar from '../../routes/homeShopcar'
+
 
 /**
  * 弹出层
@@ -36,9 +38,7 @@ class Popup extends PureComponent{
                 <div className={classNames(Styles.wx_popup,Styles.wx_content_bottom
         )} style={{"display": flag ? "none" :"block" }}>
             
-                    { <div>
-                        sssssss
-                    </div> }
+                    <HomeShopcar />
 
                 </div>
 

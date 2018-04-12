@@ -20,6 +20,8 @@ import ProductList from '../routes/productList'
 import { width } from 'window-size';
 import { inherits } from 'util';
 
+
+
  class Home extends PureComponent{
 
 
@@ -36,7 +38,7 @@ import { inherits } from 'util';
                 <SearchProduct text={"搜索商品"} />
                 <ImageAd imgurl="" imgsrc={ad1} /> 
                 <ProductList />
-                <Popup  dispatch = {dispatch}  flag={homePopup} />
+                <Popup   dispatch = {dispatch}  flag={homePopup} />
             </div>        
             
         )
@@ -49,6 +51,6 @@ import { inherits } from 'util';
 
 export default  connect(({globalRedux})=>{
     return {
-        homePopup:globalRedux.homePopup
+        homePopup:globalRedux.homePopup,
     }
 })(Home)

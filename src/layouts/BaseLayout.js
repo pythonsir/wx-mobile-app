@@ -65,7 +65,6 @@ class BaseLayout extends PureComponent{
                      <Redirect exact from="/" to={bashRedirect} />
                 </Switch>
                 <WxTabBar />
-                
             </div>
            
         )

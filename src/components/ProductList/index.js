@@ -24,6 +24,10 @@ class ProductList extends PureComponent{
             type:'openPopup'
         })
 
+        this.props.dispatch({
+            type:'getHomeShopcarSaga'
+        })
+
         return false;
        
 
@@ -35,7 +39,6 @@ class ProductList extends PureComponent{
 
         const {data} = this.props;
 
-        const content = (<div>44444444</div>)
 
         return (
 

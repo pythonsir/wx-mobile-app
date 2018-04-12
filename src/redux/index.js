@@ -7,6 +7,8 @@ import bannerRedux from './bannerRedux'
 import shortCutRedux from './shortCutRedux'
 import productsRedux from './productsRedux'
 import globalRedux from './globalRedux'
+import homeShopcarRedux from './homeShopcarRedux'
+
 
 const config = {
   routerReducer,
@@ -14,6 +16,7 @@ const config = {
   shortCutRedux,
   productsRedux,
   globalRedux,
+  homeShopcarRedux,
 }
 
   
