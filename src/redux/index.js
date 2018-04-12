@@ -6,13 +6,14 @@ import {
 import bannerRedux from './bannerRedux'
 import shortCutRedux from './shortCutRedux'
 import productsRedux from './productsRedux'
-
+import globalRedux from './globalRedux'
 
 const config = {
   routerReducer,
   bannerRedux,
   shortCutRedux,
   productsRedux,
+  globalRedux,
 }
 
   

@@ -8,16 +8,25 @@ import Styles from './index.less'
 class Popup extends PureComponent{
 
 
-  
+    constructor(props){
+        super(props)
+    }
+    
+
     closeMe=()=>{
-        this.props.onclose()
+
+        this.props.dispatch({
+            type:'closePopup'
+        })
+
+    
     }
 
 
     render(){
 
 
-        const {flag,content} = this.props;
+        const {flag} = this.props;
 
         return(
 
@@ -27,7 +36,9 @@ class Popup extends PureComponent{
                 <div className={classNames(Styles.wx_popup,Styles.wx_content_bottom
         )} style={{"display": flag ? "none" :"block" }}>
             
-                    { content }
+                    { <div>
+                        sssssss
+                    </div> }
 
                 </div>
 

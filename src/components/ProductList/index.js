@@ -11,31 +11,25 @@ import scar from '../../assets/scar.svg'
 class ProductList extends PureComponent{
 
 
-    constructor(props){
-
-        super(props)
-        this.state = {
-            hidden:true,
-        }
-
+   
+    state={
+        hidden:false,
     }
 
 
     clickShopCar = (index)=>{
 
-        this.setState({
-            hidden:!this.state.hidden,
+
+        this.props.dispatch({
+            type:'openPopup'
         })
+
+        return false;
+       
 
     }
 
-    closePopu = () =>{
-
-        this.setState({
-            hidden:!this.state.hidden,
-        })
-
-    }
+  
 
     render(){
 
@@ -54,7 +48,7 @@ class ProductList extends PureComponent{
                         data.map((item,index)=>(
 
                             <li key={index}>
-                                                <Link to={item.url} >
+                                                <div className={Styles.pwarper}>
 
                                                     <div>
                                                         <img src={item.imgsrc} />
@@ -72,7 +66,7 @@ class ProductList extends PureComponent{
                                                         </div>
                                                     </div>
                                                 
-                                                </Link>
+                                                </div>
                             </li>
                         ))
 
@@ -83,7 +77,6 @@ class ProductList extends PureComponent{
                     </ul>
                 </div>
 
-                <Popup content={content} onclose={this.closePopu} flag={this.state.hidden} />
             </div>
 
         )

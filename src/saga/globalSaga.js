@@ -13,10 +13,10 @@ function* getSubTabPosition(){
 
 
 
-function* global() {
+function* globalSaga() {
 
   
    
 }
 
-export default global;
+export default globalSaga;
