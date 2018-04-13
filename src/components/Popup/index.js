@@ -10,20 +10,6 @@ import HomeShopcar from '../../routes/homeShopcar'
 class Popup extends PureComponent{
 
 
-    constructor(props){
-        super(props)
-    }
-    
-
-    closeMe=()=>{
-
-        this.props.dispatch({
-            type:'closePopup'
-        })
-
-    
-    }
-
 
     render(){
 
@@ -43,7 +29,7 @@ class Popup extends PureComponent{
                 </div>
 
 
-                <div onClick={this.closeMe} className={Styles.wx_modal} style={{"display": flag ? "none" :"block" }}>
+                <div  className={Styles.wx_modal} style={{"display": flag ? "none" :"block" }}>
 
 
                 </div>

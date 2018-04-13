@@ -1,7 +1,6 @@
 const initstate = {
 
     homePopup:true,
-
 }
 
 function globalRedux(state=initstate,{type,payload}){
@@ -20,8 +19,7 @@ function globalRedux(state=initstate,{type,payload}){
                 ...state,
                 homePopup:true,
             }
-            
-
+        
         default:
             return state;
     }

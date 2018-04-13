@@ -10,7 +10,7 @@ class HomeShopcar extends PureComponent{
         const { ajaxdata }  = this.props;
 
         return (
-            <HomeShopcarComponent  data={ajaxdata} />
+            <HomeShopcarComponent dispatch={this.props.dispatch}  data={ajaxdata} />
         )
     }
 

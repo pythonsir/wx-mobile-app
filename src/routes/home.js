@@ -1,5 +1,7 @@
 import React ,{PureComponent} from 'react'
 
+import classNames from 'classnames'
+
 import {connect} from 'react-redux'
 
 import  Banner from '../routes/banner'
@@ -20,6 +22,7 @@ import ProductList from '../routes/productList'
 import { width } from 'window-size';
 import { inherits } from 'util';
 
+import Styles from '../index.css'
 
 
  class Home extends PureComponent{
@@ -32,7 +35,7 @@ import { inherits } from 'util';
 
         return (
 
-            <div style={{ "height": "100%","overflow": "scroll"}}>
+            <div  style={{ "height": "100%"}}>
                 <Banner />
                 <ShortCut />
                 <SearchProduct text={"搜索商品"} />
