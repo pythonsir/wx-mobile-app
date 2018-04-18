@@ -116,6 +116,18 @@ const addShopcar = Mock.mock('/api/getshopcar',{
 
 })
 
+const productdetail = Mock.mock('/api/productdetail/10004',{
+
+    "id":10004,
+    "title":"熊猫精选  黑芝麻蜜丸  手工现做  柴火慢蒸 九蒸九晒黑芝麻蜜丸12丸/罐/108克 买三罐送一罐 四罐1疗程",
+    "price":"49.90",
+    "carriage":{
+        "carriage_id":1,
+        "carriage_text":'免运费',
+        "carriage_price":'0.00'
+    },
+});
+
 export {
     banner,
     shortcut,

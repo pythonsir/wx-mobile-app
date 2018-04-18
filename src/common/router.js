@@ -15,15 +15,15 @@ export const getRouterData = () => {
                 component:Home, 
             },
             {
-                path:'/classify',
+                path:'/home/classify',
                 component:Classify,
             },
             {
-                path:'/shopcar',
+                path:'/home/shopcar',
                 component:ShopCar,
             },
             {
-                path:'/me',
+                path:'/home/me',
                 component:Me,
             }
 

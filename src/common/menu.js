@@ -29,7 +29,7 @@ const menuData = [
     {
         name:'分类',
         key:'classify',
-        path:'/classify',
+        path:'/home/classify',
         icon: sort1,
         selectedIcon:sort2,
         unselectedTintColor:"#949494",
@@ -38,7 +38,7 @@ const menuData = [
     {
         name:'购物车',
         key:'shopcar',
-        path:'/shopcar',
+        path:'/home/shopcar',
         icon: shopcar1,
         selectedIcon:shopcar2,
         unselectedTintColor:"#949494",
@@ -47,7 +47,7 @@ const menuData = [
     {
         name:'我的',
         key:'me',
-        path:'/me',
+        path:'/home/me',
         icon: me1,
         selectedIcon:me2,
         unselectedTintColor:"#949494",
