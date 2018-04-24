@@ -1,5 +1,7 @@
 import React,{ PureComponent } from 'react'
 
+import {history} from '../../store'
+
 import {Link} from 'react-router-dom'
 
 import Styles from './index.less'
@@ -17,8 +19,10 @@ class ProductList extends PureComponent{
     }
 
 
-    clickShopCar = (index)=>{
+    clickShopCar = (index,event)=>{
 
+
+        event.stopPropagation();
 
         this.props.dispatch({
             type:'openPopup'
@@ -31,11 +35,21 @@ class ProductList extends PureComponent{
         var _body = document.getElementsByTagName("body")
 
         _body[0].style.overflow="hidden";
-       
 
+        
+    }
 
-        return false;
-       
+    // 跳转商品详情
+    gotoProductDetail = (id)=>{
+
+        history.push("/product")
+
+        this.props.dispatch({
+            type:'getProductdetailSaga',
+            payload:{"id":id}
+        })
+     
+
 
     }
 
@@ -54,9 +68,9 @@ class ProductList extends PureComponent{
                     <ul>
 
                     {
-                        data.map((item,index)=>(
+                        data.map((item)=>(
 
-                            <li key={index}>
+                            <li key={item.id} onClick={this.gotoProductDetail.bind(this,item.id)} >
                                                 <div className={Styles.pwarper}>
 
                                                     <div>
@@ -70,7 +84,7 @@ class ProductList extends PureComponent{
                                                         <p><em>¥ {item.price}</em></p>
                                                         <div className={Styles.shop_cart}>
                                                             <div className={Styles.cap_goods_list__buy_btn}>
-                                                                <img onClick={this.clickShopCar.bind(this,index)}  className={Styles.scimg} src={scar} />
+                                                                <img onClick={this.clickShopCar.bind(this,item.id)}  className={Styles.scimg} src={scar} />
                                                             </div>
                                                         </div>
                                                     </div>
