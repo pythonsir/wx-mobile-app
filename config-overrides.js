@@ -7,6 +7,9 @@ const fileLoaderMatcher = function (rule) {
 module.exports = {
 
   webpack: function override(config, env) {
+
+    config = injectBabelPlugin('transform-decorators-legacy',config)
+
     // babel-plugin-import
     config = injectBabelPlugin(['import',
     {
