@@ -29,14 +29,6 @@ export async function getHShopCar(){
 }
 
 
-export async function getProductdetailById(param){
-
-    console.log(param);
-
-    return axios.get('/api/productdetail/')
-
-}
-
 export async function login(param) {
 
    const {username,password,type} = param;

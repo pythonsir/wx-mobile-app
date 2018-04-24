@@ -15,12 +15,6 @@ import p3 from '../assets/p3.png'
 import p4 from '../assets/p4.jpg'
 import p5 from '../assets/p5.jpg'
 
-import pd1 from '../assets/pd1.jpg'
-import pd2 from '../assets/pd2.jpg'
-import pd3 from '../assets/pd3.jpg'
-import pd4 from '../assets/pd4.jpg'
-
-
 const Random = Mock.Random
 
 
@@ -57,42 +51,36 @@ const shortcut = Mock.mock('/api/shortcut',[
 const products_1 = Mock.mock('/api/products_1',[
 
     {
-        "id|1000-2000":1,
         url:'',
         imgsrc:p1,
         title:'【买2份减10元】海南贵妃芒果 香甜多汁 皮薄核小 原产地芒果新鲜采摘 中大果净重5斤装京东包邮',
         "price|1-100.1-2":1,
     },
     {
-        "id|1000-2000":1,
         url:'',
         imgsrc:p2,
         title:'熊猫精选  黑芝麻蜜丸  手工现做  柴火慢蒸 九蒸九晒黑芝麻蜜丸12丸/罐/108克 买三罐送一罐 四罐1疗程',
         "price|1-100.1-2":1,
     },
     {
-        "id|1000-2000":1,
         url:'',
         imgsrc:p3,
         title:'熊猫精选  陕北米脂小米 农家月子米 养胃养颜 现磨现发 5斤装包邮',
         "price|1-100.1-2":1,
     },
     {
-        "id|1000-2000":1,
         url:'',
         imgsrc:p4,
         title:'熊猫有礼 阿九提冰川牧场纯牛奶 原生牧场 军工品质 滴滴鲜醇（200ml*16袋）',
         "price|1-100.1-2":1,
     },
     {
-        "id|1000-2000":1,
         url:'',
         imgsrc:p5,
         title:'熊猫有礼 燕麦代餐酸奶 醇香口感，奇妙风味，能量酸奶（180g*12杯）',
         "price|1-100.1-2":1,
     },
     {
-        "id|1000-2000":1,
         url:'',
         imgsrc:p4,
         title:'熊猫有礼 阿九提冰川牧场纯牛奶 原生牧场 军工品质 滴滴鲜醇（200ml*16袋）',
@@ -128,10 +116,9 @@ const addShopcar = Mock.mock('/api/getshopcar',{
 
 })
 
-const productdetail = Mock.mock('/api/productdetail/',{
+const productdetail = Mock.mock('/api/productdetail/10004',{
 
     "id":10004,
-    "banner":[pd1,pd2,pd3,pd4],
     "title":"熊猫精选  黑芝麻蜜丸  手工现做  柴火慢蒸 九蒸九晒黑芝麻蜜丸12丸/罐/108克 买三罐送一罐 四罐1疗程",
     "price":"49.90",
     "carriage":{
@@ -146,5 +133,4 @@ export {
     shortcut,
     products_1,
     addShopcar,
-    productdetail,
 }

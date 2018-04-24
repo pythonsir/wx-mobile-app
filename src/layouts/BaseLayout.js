@@ -37,7 +37,7 @@ class BaseLayout extends PureComponent{
             <div>
                 
                     <Switch> 
-                            <Route  path="/home"   component={MainLayout} />
+                            <Route  path="/home"  component={MainLayout} />
 
                             <Route path="/product" component={ProductLayout} />
 
