@@ -4,10 +4,7 @@
 [![node](https://img.shields.io/badge/node-%3E%3D7.9.0-blue.svg)]()
 [![npm](https://img.shields.io/badge/npm-%3E%3D4.2.0-green.svg)]()
 
-基于 Ant Design Mobile 的开源微商城  
-
-
-使用 [Create-React-App](https://github.com/facebook/create-react-app) + [Ant-Design-Mobile](https://github.com/ant-design/ant-design-mobile) 框架整合，集合了react-redux、react-router-redux、redux-saga、axios 等。  
+使用 [Create-React-App](https://github.com/facebook/create-react-app) 脚手架，集合了react-redux、react-router-redux、redux-saga、axios 等构建的开源微商城
 
 
 ## 效果gif
