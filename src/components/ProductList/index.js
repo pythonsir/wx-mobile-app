@@ -42,12 +42,12 @@ class ProductList extends PureComponent{
     // 跳转商品详情
     gotoProductDetail = (id)=>{
 
-        history.push("/product")
-
-        this.props.dispatch({
-            type:'getProductdetailSaga',
-            payload:{"id":id}
+        history.push({
+            pathname:"/product",
+            search:"?id="+id,
         })
+
+       
      
 
 

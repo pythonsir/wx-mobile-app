@@ -31,9 +31,13 @@ export async function getHShopCar(){
 
 export async function getProductdetailById(param){
 
-    console.log(param);
 
-    return axios.get('/api/productdetail/')
+    return axios.get('/api/productdetail/').then(function(response){
+
+
+            return response.data;
+
+    })
 
 }
 

@@ -1,61 +1,72 @@
-import React,{PureComponent} from 'react'
+import React, { PureComponent } from 'react'
 import { Carousel } from 'antd-mobile';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import { Swiper, Flex, FlexItem } from 'react-weui'
+
 
 /**
  *  banner
  */
-class Banner extends PureComponent{
+class Banner extends PureComponent {
 
+   
 
-    state = {
-        imgHeight: 176,
-        slideIndex: 0,
-      }
+     state = {
+         data:[1,2,3,5,6]
+     }
+
 
     componentDidMount() {
         // simulate img loading
 
         this.props.dispatch({
             type: 'getBannerListSaga',
-          });
+        });
 
         
+
+    }
+
+    componentWillReceiveProps(nextprops){
+
+        this.setState({
+            data:nextprops.data,
+        })
+
     }
 
 
-    render(){
+    render() {
 
-        const {data } = this.props;
+        console.log(this.state.data);
 
         return (
 
             <Carousel
-                autoplay={false}
-                infinite
-                selectedIndex={1}
-                beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-                afterChange={index => console.log('slide to', index)}
+            autoplay
+            infinite
+            selectedIndex={0}
+        >
+            {this.state.data.map(val => (
+            <a
+                key={val}
+                href=""
+                style={{ display: 'inline-block', width: '100%' }}
             >
-                {data.map(val => (
-                <a
-                    key={val}
-                    href=""
-                    style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
-                >
-                    <img
-                    src={val}
-                    alt=""
-                    style={{ width: '100%', verticalAlign: 'top' }}
-                    onLoad={() => {
-                        // fire window resize event to change height
-                        window.dispatchEvent(new Event('resize'));
-                        this.setState({ imgHeight: 'auto' });
-                    }}
-                    />
-                </a>
-                ))}
-            </Carousel>
+                <img
+                src={val}
+                alt=""
+                style={{ width: '100%', verticalAlign: 'top' }}
+                onLoad={() => {
+                    window.dispatchEvent(new Event('resize'));
+                }}
+                />
+            </a>
+            ))}
+        </Carousel>
+
+
+
         )
     }
 
@@ -63,11 +74,11 @@ class Banner extends PureComponent{
 
 }
 
-export default connect(({bannerRedux})=>{
+export default connect(({ bannerRedux }) => {
 
 
     return bannerRedux
-    
-    
+
+
 
 })(Banner);

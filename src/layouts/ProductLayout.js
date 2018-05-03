@@ -1,4 +1,5 @@
 import React,{PureComponent} from 'react'
+import ProductDetail from '../routes/productdetail'
 
 export default class ProductLayout extends PureComponent{
 
@@ -6,7 +7,10 @@ export default class ProductLayout extends PureComponent{
     render(){
 
         return (
-            <div>ddddddd</div>
+
+            <ProductDetail />
+
+
         )
 
 

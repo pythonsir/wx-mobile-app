@@ -85,7 +85,6 @@ class HomeShopCar extends PureComponent{
         
         const gg = this.renderGg(data.data)
 
-        console.log(data.data)
 
         return (
             <div className={Styles.hsc_container}>

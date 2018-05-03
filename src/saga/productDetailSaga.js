@@ -7,13 +7,12 @@ function* getProductdetailSaga({payload}){
 
     const res = yield call(getProductdetailById,payload);
 
-    console.log(res)
 
-    // yield put({
-    //     type:'getBannerListRedux',
-    //     payload:res.data,
-    //     }   
-    // )
+    yield put({
+        type:'pd/prodcutDetailByid',
+        payload:res,
+         }   
+    )
 
 
 

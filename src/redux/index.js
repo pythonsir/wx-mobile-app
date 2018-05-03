@@ -8,6 +8,7 @@ import shortCutRedux from './shortCutRedux'
 import productsRedux from './productsRedux'
 import globalRedux from './globalRedux'
 import homeShopcarRedux from './homeShopcarRedux'
+import productDetailRedux from './productDetailRedux'
 
 
 const config = {
@@ -17,6 +18,7 @@ const config = {
   productsRedux,
   globalRedux,
   homeShopcarRedux,
+  productDetailRedux,
 }
 
   
